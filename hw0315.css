@@ -2,12 +2,13 @@
 {
     background-color: rgb(3, 3, 39);
     width: 100%;
-    height: 30px;
+    height: 40px;
     display: flex;
     justify-content: flex-end;
     position: fixed;
     font-size: 0;
     z-index: 1;
+    top: 0;
 }
 a,.wa
 {
@@ -16,6 +17,8 @@ a,.wa
     text-decoration: none;
     font-size: 15px;
     margin: 10px;
+    position: relative;
+    right: 100px;
 }
 i
 {
@@ -24,7 +27,7 @@ i
 }
 .nav
 {
-    background-color: white;
+    background-color: #fff;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -32,9 +35,9 @@ i
     align-items: center;
     position: fixed;
     font-size: 0;
-    top: 30px;
-    height: 70px;
-    width: 1520px;
+    top: 40px;
+    height: 80px;
+    width: 100%;
     z-index: 1;
 }
 .nav2
@@ -45,7 +48,7 @@ i
     padding: 15px 0px;
     justify-content: center;
     position: relative;
-    right: 100px;
+    right: 50px;
 }
 .nav2 a
 {
@@ -61,13 +64,14 @@ i
     border-radius: 25% 50%;
     -webkit-border-radius: 25% 50%;
     -moz-border-radius: 25% 50%;
+    right: 10px;
 }
 .nav img
 {
     position: relative;
-    left: 50px;
-    width: 200px;
-    height: 30px;
+    left: 0px;
+    width: 150px;
+    height: 25px;
 }
 .input
 {
@@ -83,6 +87,7 @@ i
     display: flex;
     align-items: center;
     position: relative;
+    left: 0px;
     top: 40px;
     border-radius: 25% 50%;
     -webkit-border-radius: 25% 50%;
@@ -145,7 +150,7 @@ i
     align-items: center;
     text-align: center;
     font-size: 17px;
-    margin: 95px 110px 110px;
+    margin: 150px 0px 50px;
     line-height: 1.5;
 }
 .txt p
@@ -200,6 +205,7 @@ i
     flex-direction: column;
     margin: 0px 15px;
     font-size: 20px;
+    width: 250px;
 }
 .list
 {
@@ -212,6 +218,8 @@ i
 .row .left a
 {
     color: #00f;
+    position: relative;
+    left: 0px;
 }
 .even
 {
@@ -253,8 +261,8 @@ i
 }
 .six img
 {
-    width: 100px;
-    margin: 30px;
+    width: 80px;
+    margin: 20px;
     background-color: #fff;
 }
 .six h3
@@ -280,7 +288,7 @@ i
     display: flex;
     flex-direction: row;
     justify-content: center;
-    font-size: 35px;
+    font-size: 20px;
     font-weight: bold;
     color: #000;
 }
@@ -313,6 +321,7 @@ i
 .brand
 {
     width: 1200px;
+    height: 450px;
     display: flex;
     justify-content: center;
     margin: auto;
@@ -322,12 +331,13 @@ i
     color: #00f;
     margin: 0px 0px 30px;
     font-size: 18px;
+    left: 0;
 }
 .global
 {
     background-color: rgb(24, 56, 116);
     color: #fff;
-    height: 350px;
+    height: 420px;
 }
 .global p
 {
@@ -345,14 +355,17 @@ i
     padding: 10px;
     display: flex;
     justify-content: center;
+    bottom: 60px;
+    left: 0px;
 }
 .global div
 {
     background-color: rgb(0, 119, 255);
     color: rgb(0, 119, 255);
     width: 120px;
+    height: 15px;
     position: relative;
-    bottom: 80px;
+    bottom: 110px;
     left: 95px;
     z-index: 0;
 }
@@ -380,6 +393,7 @@ i
     opacity: .5;
     font-size: 14px;
     margin: 15px 0px;
+    left: 10px;
 }
 .covid
 {
@@ -393,14 +407,16 @@ i
     background-color: #fff;
     color: #000;
     font-size: 16px;
-    padding: 10px 50px;
+    padding: 10px 40px;
+    right: 0;
 }
 .last
 {
     background-color: rgb(1, 9, 32);
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
     padding: 50px 0px;
 }
 .last p
@@ -414,8 +430,8 @@ i
     background-color: rgb(21, 21, 102);
     padding: 10px;
     position: relative;
-    bottom: 10px;
     border-radius: 50%;
+    left: 0;
 }
 .message svg
 {
@@ -424,5 +440,4 @@ i
     right: 10px;
     width: 50px;
     height: 50px;
-
 }
