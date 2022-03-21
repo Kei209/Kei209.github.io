@@ -1,0 +1,428 @@
+.nav1
+{
+    background-color: rgb(3, 3, 39);
+    width: 1520px;
+    height: 30px;
+    display: flex;
+    justify-content: end;
+    position: fixed;
+    font-size: 0;
+    z-index: 1;
+}
+a,.wa
+{
+    color: white;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 15px;
+    margin: 10px;
+}
+i
+{
+    color: white;
+    display: inline-block;
+}
+.nav
+{
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    font-size: 0;
+    top: 30px;
+    height: 70px;
+    width: 1520px;
+    z-index: 1;
+}
+.nav2
+{
+    width: 650px;
+    font-size: 0;
+    display: flex;
+    padding: 15px 0px;
+    justify-content: center;
+    position: relative;
+    right: 100px;
+}
+.nav2 a
+{
+    color: rgb(0, 0, 70);
+}
+.nav .free
+{
+    background-color: blue;
+    padding: 0px 20px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-radius: 25% 50%;
+    -webkit-border-radius: 25% 50%;
+    -moz-border-radius: 25% 50%;
+}
+.nav img
+{
+    position: relative;
+    left: 50px;
+    width: 200px;
+    height: 30px;
+}
+.input
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.input .free
+{
+    background-color: blue;
+    padding: 0px 20px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 40px;
+    border-radius: 25% 50%;
+    -webkit-border-radius: 25% 50%;
+    -moz-border-radius: 25% 50%;
+}
+.row1
+{
+    background-color: rgb(3, 3, 39);
+    width: 1520px;
+    height: 750px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: relative;
+    top: 100px;
+    z-index: 0;
+}
+.left
+{
+    display: flex;
+    flex-direction: column;
+    margin: 150px 0px 150px 90px;
+    width: 850px;
+}
+.row1 .left .w
+{
+    color: white;
+    font-size: 40px;
+    margin: 20px 0px 0px;
+    font-weight: bold;
+}
+.row1 .left .g
+{
+    color: rgb(10, 190, 90);
+    font-size: 40px;
+    margin: 10px 0px;
+    font-weight: bold;
+}
+.row1 .left p
+{
+    color: white;
+    font-size: 20px;
+    margin: 20px 0px;
+}
+.left input
+{
+    margin: 100px 10px 15px;
+    width: 300px;
+    height: 20px;
+}
+.right
+{
+    width: 700px;
+    margin: 130px 50px 130px;
+}
+.txt
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 17px;
+    margin: 95px 110px 110px;
+    line-height: 1.5;
+}
+.txt p
+{
+    opacity: .8;
+}
+.txt h1
+{
+    font-size: 36px;
+    margin: 20px;
+    font-weight: bold;
+}
+.row
+{
+    width: 1200px;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+.row .right img
+{
+    width: 550px;
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0px;
+}
+.row .left
+{
+    width: 650px;
+    margin: 80px 0px;
+}
+.row .left h1
+{
+    color: black;
+    font-size: 40px;
+    margin: 10px 0px;
+    font-weight: bold;
+    width: 650px;
+}
+.row .left p
+{
+    color: black;
+    opacity: .8;
+    font-size: 20px;
+    margin: 10px 0px;
+    line-height: 1.5;
+}
+.row .left ul
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 0px 15px;
+    font-size: 20px;
+}
+.list
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    font-size: 20px;
+    margin: 30px 0px;
+}
+.row .left a
+{
+    color: #00f;
+}
+.even
+{
+    flex-direction: row-reverse;
+}
+.six
+{
+    width: 1420px;
+    background-color: #eee;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.six h1
+{
+    width: 1420px;
+    font-size: 35px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+}
+.six .box
+{
+    width: 1350px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.six .box div
+{
+    background-color: #eee;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0px;
+}
+.six img
+{
+    width: 100px;
+    margin: 30px;
+    background-color: #fff;
+}
+.six h3
+{
+    width: 300px;
+    font-size: 20px;
+    margin: 7px 0px;
+    display: flex;
+    justify-content: center;
+}
+.six p
+{
+    width: 300px;
+    font-size: 14px;
+    line-height: 2;
+}
+.title
+{
+    width: 1200px;
+    margin: auto;
+    height: 50px;
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 35px;
+    font-weight: bold;
+    color: #000;
+}
+.b
+{
+    color: rgb(36, 76, 255);
+}
+.pic
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+.pic .two
+{
+    width: 100px;
+}
+.pic img
+{
+    width: 200px;
+    height: 100px;
+}
+.brand p
+{
+    width: 500px;
+    color: black;
+    opacity: .8;
+    font-size: 17px;
+    line-height: 1.5;
+}
+.brand
+{
+    width: 1200px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.brand a
+{
+    color: #00f;
+    margin: 0px 0px 30px;
+    font-size: 18px;
+}
+.global
+{
+    background-color: rgb(24, 56, 116);
+    color: #fff;
+    height: 350px;
+}
+.global p
+{
+    font-size: 35px;
+    padding: 100px 100px 50px;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+}
+.global a
+{
+    background-color: rgb(0, 119, 255);
+    width: 300px;
+    margin: 0px 100px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+.global div
+{
+    background-color: rgb(0, 119, 255);
+    color: rgb(0, 119, 255);
+    width: 120px;
+    position: relative;
+    bottom: 80px;
+    left: 95px;
+    z-index: 0;
+}
+.end
+{
+    background-color: rgb(1, 9, 32);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 30px;
+}
+.menu
+{
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+.menu h3
+{
+    margin: 35px 0px;
+    font-size: 18px;
+}
+.menu a
+{
+    opacity: .5;
+    font-size: 14px;
+    margin: 15px 0px;
+}
+.covid
+{
+    background-color: rgb(1, 9, 32);
+    padding: 0px 100px;
+    display: flex;
+    justify-content: end;
+}
+.covid a
+{
+    background-color: #fff;
+    color: #000;
+    font-size: 16px;
+    padding: 10px 50px;
+}
+.last
+{
+    background-color: rgb(1, 9, 32);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 50px 0px;
+}
+.last p
+{
+    color: #fff;
+    opacity: .5;
+    font-size: 15px;
+}
+.icon a
+{
+    background-color: rgb(21, 21, 102);
+    padding: 10px;
+    position: relative;
+    bottom: 10px;
+    border-radius: 50%;
+}
+.message svg
+{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+
+}
