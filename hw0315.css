@@ -96,7 +96,8 @@ i
 .row1
 {
     background-color: rgb(3, 3, 39);
-    width: 1520px;
+    width: 100%;
+    margin: auto;
     height: 750px;
     display: flex;
     flex-direction: row;
@@ -170,12 +171,18 @@ i
     flex-direction: row;
     margin: auto;
 }
-.row .right img
+.row .right
 {
     width: 550px;
     display: flex;
     flex-direction: row;
     margin: 10px 0px;
+    align-items: center;
+}
+.row .right img
+{
+    width: 100%;
+    height: 60%;
 }
 .row .left
 {
@@ -188,7 +195,7 @@ i
     font-size: 40px;
     margin: 10px 0px;
     font-weight: bold;
-    width: 650px;
+    width: 100%;
 }
 .row .left p
 {
@@ -227,15 +234,16 @@ i
 }
 .six
 {
-    width: 1420px;
+    width: 100%;
     background-color: #eee;
     padding: 50px;
     display: flex;
     flex-direction: column;
+    margin: auto;
 }
 .six h1
 {
-    width: 1420px;
+    width: 100%;
     font-size: 35px;
     font-weight: bold;
     display: flex;
@@ -244,7 +252,7 @@ i
 }
 .six .box
 {
-    width: 1350px;
+    width: 100%;
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -261,8 +269,8 @@ i
 }
 .six img
 {
-    width: 80px;
-    margin: 20px;
+    border: #fff 1px solid;
+    border-radius: 50%;
     background-color: #fff;
 }
 .six h3
@@ -288,7 +296,7 @@ i
     display: flex;
     flex-direction: row;
     justify-content: center;
-    font-size: 20px;
+    font-size: 35px;
     font-weight: bold;
     color: #000;
 }
@@ -355,7 +363,7 @@ i
     padding: 10px;
     display: flex;
     justify-content: center;
-    bottom: 60px;
+    bottom: 40px;
     left: 0px;
 }
 .global div
@@ -363,11 +371,12 @@ i
     background-color: rgb(0, 119, 255);
     color: rgb(0, 119, 255);
     width: 120px;
-    height: 15px;
+    height: 12px;
     position: relative;
-    bottom: 110px;
+    bottom: 75px;
     left: 95px;
     z-index: 0;
+    font-size: 0;
 }
 .end
 {
