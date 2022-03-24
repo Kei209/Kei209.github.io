@@ -343,9 +343,9 @@ color: #0061FF;
     width: 200px;
     height: 100px;
     padding: 0 20px;
-    text-align: center;
-    position: relative;
-    top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .pic a:nth-child(2)
 {
@@ -412,7 +412,7 @@ color: #0061FF;
 {
     width: 1200px;
     font-size: 40px;
-    padding: 100px 100px 50px;
+    padding: 100px 0px 0px;
     line-height: 1.5;
     position: relative;
     z-index: 1;
@@ -424,13 +424,13 @@ color: #0061FF;
     color: #fff;
     text-decoration: none;
     width: 330px;
-    margin-left: 100px;
     font-size: 17px;
     padding: 13px;
     display: flex;
     justify-content: center;
-    align-content: flex-start;
     border-radius: 30px;
+    margin-right: auto;
+    margin-left: 150px;
 }
 .global .space
 {
@@ -439,18 +439,18 @@ color: #0061FF;
     width: 140px;
     height: 18px;
     position: relative;
-    bottom: 85px;
+    bottom: 35px;
     right: 535px;
     z-index: 0;
     font-size: 0;
 }
-.global .free
+/* .global .free
 {
+    width: 400px;
+    margin: auto;
     background-color: #172b4d;
-    position: relative;
-    right: 475px;
-    bottom: 30px;
-}
+    background-color: #fa0;
+} */
 .information
 {
     background-color: #00142D;
