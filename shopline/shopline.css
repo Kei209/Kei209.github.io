@@ -46,6 +46,7 @@ header .move
 {
     font-size: 0;
     flex-grow: 1;
+    margin-left: 30px;
 }
 .main-menu a
 {
@@ -218,17 +219,19 @@ input
 {
     display: flex;
     flex-wrap: wrap;
-
+    justify-content: space-around;
 }
 .left .list li
 {
-    width: 50%;
+    width: 40%;
     list-style: none;
     margin-bottom: 1em;
+    text-indent: -2em;
 }
 .left .list i
 {
     background-color: #DEEBFF;
+    text-indent: -1em;
     color: #08f;
     font-size: 1px;
     text-align: center;
@@ -242,7 +245,7 @@ input
     color: #0061FF;
     text-decoration: none;
 }
-.row:nth-child(even)
+.row:nth-child(odd)
 {
     flex-direction: row-reverse;
 }
@@ -375,8 +378,7 @@ input
 .brand p
 {
     width: 95%;
-    color: black;
-    opacity: .8;
+    color: rgba(0, 0, 0, .8);
     font-size: 17px;
     line-height: 1.7;
     display: flex;
