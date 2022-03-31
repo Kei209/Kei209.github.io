@@ -43,16 +43,16 @@ body
     margin-top: 70px;
     margin-bottom: 100px;
 }
-.even .color-block
+.part:nth-of-type(even) .color-block
 {
-    width: 400px;
+    width: 500px;
     height: 350px;
     background-color: #eee;
     position: absolute;
-    right: 130px;
-    top: 45px;
+    right: 95px;
+    top: 35px;
 }
-.even .wrap
+.part:nth-of-type(even) .wrap
 {
     width: 600px;
     height: 400px;
@@ -60,12 +60,7 @@ body
     top: 100px;
     left: -85px;
 }
-.even .wrap img
-{
-    position: relative;
-    left: 0;
-}
-.even i
+.part:nth-of-type(even) i
 {
     background-color: red;
     width: 47px;
@@ -78,28 +73,27 @@ body
     font-size: 18px;
     position: absolute;
     top: 50%;
-    left: -15px;
+    left: 10px;
 }
-.even .content
+.part:nth-of-type(even) .content
 {
     background-color: #eee;
     width: 570px;
     padding: 15px;
     position: relative;
     right: -100px;
-    top: 70px;
+    top: 80px;
 }
-.even .box-even
+.part:nth-of-type(even) .box-even
 {
     width: 270px;
-    height: 300px;
     display: flex;
     flex-direction: column;
     position: absolute;
     right: 0;
     top: 0;
 }
-.even .title-box
+.part:nth-of-type(even) .title-box
 {
     background-color: darkred;
     color: #fff;
@@ -123,7 +117,7 @@ body
     background-color: #eee;
     position: absolute;
     right: 0;
-    top: 20px;
+    top: 35px;
 }
 .wrap
 {
@@ -199,7 +193,6 @@ i
 .box
 {
     width: 270px;
-    height: 300px;
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -230,7 +223,6 @@ i
     padding: 20px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
 }
 .info h3
 {
