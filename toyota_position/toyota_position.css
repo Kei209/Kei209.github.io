@@ -58,7 +58,7 @@ body
     height: 400px;
     position: relative;
     top: 100px;
-    left: -85px;
+    left: -100px;
 }
 .part:nth-of-type(even) i
 {
@@ -101,15 +101,6 @@ body
     flex-direction: row-reverse;
     align-items: center;
 }
-/* .part:nth-child(5) .content
-{
-    background-color: #eee;
-    width: 570px;
-    padding: 15px;
-    position: relative;
-    right: 60px;
-    top: 0px;
-} */
 .color-block
 {
     width: 400px;
@@ -153,14 +144,29 @@ i
     padding: 15px;
     position: relative;
     right: 60px;
-    top: 70px;
+    top: 80px;
 }
 .do
+{
+    display: flex;
+}
+.content h2
 {
     color: rgb(194, 5, 5);
     font-weight: bold;
     font-size: 14px;
     margin-bottom: 10px;
+    flex-shrink: 0;
+}
+.do::after
+{
+    content: '';
+    width: 100%;
+    border-top: 1px solid rgb(194, 5, 5);
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    left: 5px;
 }
 .mark
 {
