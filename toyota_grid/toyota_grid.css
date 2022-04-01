@@ -24,22 +24,25 @@ body
     margin-top: 50px;
     margin-bottom: 100px;
 }
-.even .color-block
+.part:nth-of-type(even) .color-block
 {
     width: 450px;
     height: 340px;
     background-color: #eee;
     grid-row: 2/6;
     grid-column: 4/9;
+    position: relative;
+    top: -30px;
+    z-index: -1;
 }
-.even .wrap
+.part:nth-of-type(even) .wrap
 {
     width: 550px;
     height: 320px;
     grid-column: 1/8;
     grid-row: 3/8;
 }
-.even .wrap img
+.part:nth-of-type(even) .wrap img
 {
     width: 550px;
     height: 360px;
@@ -52,25 +55,26 @@ body
     margin-left: -10px;
     margin-bottom: -20px;
 }
-.even .content
+.part:nth-of-type(even) .content
 {
     background-color: #eee;
     width: 570px;
     padding: 15px;
     grid-column: 4/10;
     grid-row: 7/10;
+    position: relative;
+    left: 0;
 }
-.even .box-even
+.part:nth-of-type(even) .box-even
 {
     width: 270px;
-    height: 300px;
     display: flex;
     flex-direction: column;
     grid-column: 7/10;
-    grid-row: 1/5;
+    grid-row: 1/4;
     margin-left: auto;
 }
-.even .title-box
+.part:nth-of-type(even) .title-box
 {
     background-color: darkred;
     color: #fff;
@@ -82,7 +86,7 @@ body
 .color-block
 {
     width: 400px;
-    height: 220px;
+    height: 200px;
     background-color: #eee;
     grid-row: 2/5;
     grid-column: 6/10;
@@ -121,13 +125,30 @@ i
     padding: 15px;
     grid-row: 7/9;
     grid-column: 1/7;
+    position: relative;
+    left: 50px;
 }
 .do
+{
+    display: flex;
+}
+.content h2
 {
     color: rgb(194, 5, 5);
     font-weight: bold;
     font-size: 14px;
     margin-bottom: 10px;
+    flex-shrink: 0;
+}
+.do::after
+{
+    content: '';
+    width: 100%;
+    border-top: 1px solid rgb(194, 5, 5);
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    left: 5px;
 }
 .mark
 {
@@ -160,7 +181,6 @@ i
 .box
 {
     width: 270px;
-    height: 300px;
     display: flex;
     flex-direction: column;
     grid-column: 1/4;
@@ -190,7 +210,6 @@ i
     padding: 20px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
 }
 .info h3
 {
