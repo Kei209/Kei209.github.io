@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        :root
+        {
+            --p:10px 0;
+        }
+        body
+        {
+            display: flex;
+            justify-content: center;
+        }
+        .box
+        {
+            width: 800px;
+            border: 1px solid #ccc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .picturestyle
+        {
+            height: 200px;
+        }
+        .pic
+        {
+            width: 100%;
+            border-bottom: 1px solid #ccc;
+            text-align: center;
+            padding: var(--p);
+        }
+        .info
+        {
+            padding: var(--p);
+        }
+        .info p
+        {
+            padding: var(--p);
+        }
+        #pics
+        {
+            border-top: 1px solid #ccc;
+            padding: var(--p);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="pic">
+            <img id="image1" src="" alt="" class="picturestyle">
+        </div>
+        <div class="info">
+            <p id="name"></p>
+            <p id="email"></p>
+            <p id="school"></p>
+            <p id="interest"></p>    
+        </div>
+        <div id="pics">
+            <!-- <img id="pics1" src="" alt="" class="picturestyle">
+            <img id="pics2" src="" alt="" class="picturestyle">
+            <img id="pics3" src="" alt="" class="picturestyle"> -->
+        </div>
+    </div>
+
+    <script>
+        let img = document.getElementById("image1");
+        const imgurl = "https://raw.githubusercontent.com/Kei209/FileStorage/main/cat.jpg";
+        img.setAttribute("src", imgurl)
+        img.setAttribute("alt", "cat")
+        
+        let name = document.getElementById("name");
+        name.innerText = "姓名：OOO";
+        let email = document.getElementById("email");
+        email.innerText = "Email：OOO@gmail.com";
+        let school = document.getElementById("school");
+        school.innerText = "學校：中華大學";
+        let interest = document.getElementById("interest");
+        interest.innerText = "興趣：OOO";
+        
+        // const listArray =
+        // [
+            //     "姓名：楊景琁","Email：abc123@gmail.com","學校：中華大學","興趣：上網"
+            // ];
+            // listArray.forEach((data,index)=>{
+                //     document.write(data + "<br>");
+                // });
+                
+        // document.write("<br>");
+
+        const imageArray =
+        [
+            "https://cdn2.ettoday.net/activity/images/115/article_25908_1_b.jpg",
+            "https://storage.googleapis.com/www-cw-com-tw/article/201810/article-5bd182cf13ebb.jpg",
+            "https://image.cache.storm.mg/styles/smg-800x533-fp/s3/media/image/2020/01/31/20200131-052418_U17017_M588719_cd2e.jpg?itok=s0SyFjTD"
+        ];
+        let pics = document.getElementById("pics");
+        imageArray.forEach((url,index)=>
+        {
+            pics.innerHTML += `<img src = ${url} class="picturestyle">`;
+            // document.write(`<img src = ${url} class="picturestyle">`);
+        });
+        // let pics1 = document.getElementById("pics1");
+        // pics1.setAttribute("src",imageArray[0])
+        // let pics2 = document.getElementById("pics2");
+        // pics2.setAttribute("src",imageArray[1])
+        // let pics3 = document.getElementById("pics3");
+        // pics3.setAttribute("src",imageArray[2])
+    </script>
+</body>
+</html>
