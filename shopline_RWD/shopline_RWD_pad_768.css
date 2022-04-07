@@ -1,0 +1,172 @@
+@media screen and (min-width: 768px) {
+  .btn-phone {
+    margin-bottom: 250px;
+  }
+  .banner {
+    background-color: #00142D;
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 0px;
+  }
+  .banner .pic-part {
+    padding-bottom: 50px;
+  }
+  .banner .pic-part img {
+    width: 100%;
+  }
+  .banner .txt-part {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: left;
+    margin-top: 50px;
+    padding-left: 50px;
+  }
+  .banner .txt-part h1 {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    padding-left: 20px;
+  }
+  .banner .txt-part .color {
+    color: #00C66A;
+  }
+  .banner .txt-part p {
+    color: white;
+    font-size: 20px;
+    margin: 40px 0px;
+  }
+  .banner .txt-part input {
+    width: 300px;
+    display: inline-block;
+  }
+  .banner .txt-part .free {
+    width: 100px;
+    display: inline-block;
+    text-align: center;
+  }
+  .txt-middle p {
+    width: 590px;
+  }
+  .txt-middle h2 {
+    font-size: 36px;
+  }
+  .row {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: auto;
+    border-bottom: 1px solid rgba(170, 170, 170, 0.3);
+    padding-bottom: 70px;
+    padding-top: 70px;
+  }
+  .row .pic-part {
+    width: 100%;
+  }
+  .row .pic-part img {
+    width: 100%;
+  }
+  .row .txt-part {
+    width: 100%;
+    text-align: left;
+  }
+  .row .txt-part h2 {
+    font-size: 36px;
+  }
+  .row .txt-part p {
+    width: 100%;
+  }
+  .row .txt-part .list ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    height: 160px;
+  }
+  .row .txt-part .list ul li {
+    width: 40%;
+    margin: 10px 0;
+    text-indent: -2em;
+    margin-left: 2em;
+  }
+  .six .box .content {
+    width: calc(100% / 3);
+    margin-bottom: 50px;
+    padding: 0 25px;
+  }
+  .global {
+    height: 350px;
+    background-image: url("https://img.shoplineapp.com/media/image_clips/609d0f5c33fdc6001aa95da6/original.png?1620905820");
+    background-repeat: no-repeat;
+    background-position: bottom -50px left 200px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .global .box {
+    width: 100%;
+  }
+  .global p {
+    width: 35%;
+  }
+  .global a {
+    width: 40%;
+    position: relative;
+    left: -200px;
+  }
+  .information .wrap {
+    margin: 0;
+    position: relative;
+    left: 40px;
+  }
+  .information .covid {
+    position: relative;
+    left: -230px;
+    margin: 10px 0;
+  }
+  .last .wrap, .last p {
+    position: relative;
+    left: -180px;
+    padding: 0;
+  }
+  .last .wrap .items, .last p .items {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .last .language {
+    display: none;
+  }
+}
+/*# sourceMappingURL=shopline_RWD_pad_768.css.map */

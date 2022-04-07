@@ -1,0 +1,185 @@
+@media screen and (min-width:768px) {
+    .btn-phone {
+        margin-bottom: 250px;
+    }
+
+    .banner {
+        background-color: #00142D;
+        margin: auto;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0px;
+
+        .pic-part {
+            img {
+                width: 100%;
+            }
+
+            padding-bottom: 50px;
+        }
+
+        .txt-part {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+            margin-top: 50px;
+            padding-left: 50px;
+
+            h1 {
+                color: white;
+                font-size: 40px;
+                font-weight: bold;
+                padding-left: 20px;
+            }
+
+            .color {
+                color: #00C66A;
+            }
+
+            p {
+                color: white;
+                font-size: 20px;
+                margin: 40px 0px;
+            }
+
+            input {
+                width: 300px;
+                display: inline-block;
+            }
+
+            .free {
+                width: 100px;
+                display: inline-block;
+                text-align: center;
+            }
+        }
+
+    }
+
+    .txt-middle {
+        p {
+            width: 590px;
+        }
+
+        h2 {
+            font-size: 36px;
+        }
+    }
+
+    .row {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        border-bottom: 1px solid rgba(170, 170, 170, 0.3);
+        padding-bottom: 70px;
+        padding-top: 70px;
+
+        .pic-part {
+            width: 100%;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .txt-part {
+            width: 100%;
+            text-align: left;
+
+            h2 {
+                font-size: 36px;
+            }
+
+            p {
+                width: 100%;
+            }
+
+            .list {
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    height: 160px;
+
+                    li {
+                        width: 40%;
+                        margin: 10px 0;
+                        text-indent: -2em;
+                        margin-left: 2em;
+                    }
+                }
+            }
+        }
+    }
+
+    .six {
+        .box {
+            .content {
+                width: calc(100% / 3);
+                margin-bottom: 50px;
+                padding: 0 25px;
+            }
+        }
+    }
+
+    .global {
+        height: 350px;
+        background-image: url("https://img.shoplineapp.com/media/image_clips/609d0f5c33fdc6001aa95da6/original.png?1620905820");
+        background-repeat: no-repeat;
+        background-position: bottom -50px left 200px;
+        display: flex;
+
+        .box {
+            width: 100%;
+        }
+
+        p {
+            width: 35%;
+        }
+
+        a {
+            width: 40%;
+            position: relative;
+            left: -200px;
+        }
+    }
+
+    .information {
+        .wrap {
+            margin: 0;
+            position: relative;
+            left: 40px;
+        }
+
+        .covid {
+            position: relative;
+            left: -230px;
+            margin: 10px 0;
+        }
+
+
+    }
+
+    .last {
+
+        .wrap ,p{
+            position: relative;
+            left: -180px;
+            padding: 0;
+
+            .items {
+                flex-direction: row;
+            }
+        }
+
+        .language {
+            display: none;
+        }
+
+    }
+}
