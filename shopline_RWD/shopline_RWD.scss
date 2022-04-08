@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .login {
     display: none;
 }
@@ -28,6 +32,7 @@ a {
 .main-nav {
     position: absolute;
     width: 100%;
+    height: 100vh;
     left: 0;
     top: 100%;
     display: none;
@@ -127,54 +132,61 @@ a {
     align-items: center;
     padding: 20px 0;
 
-    .pic-part {
-        padding: 40px 20px 20px;
+    .row {
+        padding-bottom: 0;
+        border: none;
 
-        img {
+        .pic-part {
+            padding: 40px 20px 20px;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .txt-part {
+            text-align: center;
             width: 100%;
-        }
-    }
 
-    .txt-part {
-        text-align: center;
+            h1 {
+                color: white;
+                font-size: 26px;
+                font-weight: bold;
+                line-height: 1.5;
+            }
 
-        h1 {
-            color: white;
-            font-size: 26px;
-            font-weight: bold;
-            line-height: 1.5;
-        }
+            .color {
+                color: #00C66A;
+            }
 
-        .color {
-            color: #00C66A;
-        }
+            p {
+                width: 100%;
+                color: white;
+                font-size: 17px;
+                font-weight: bold;
+                text-align: left;
+                line-height: 1.5;
+                text-align: justify;
+            }
 
-        p {
-            color: white;
-            font-size: 17px;
-            font-weight: bold;
-            padding: 10px 20px;
-            text-align: left;
-            line-height: 1.5;
-        }
+            input {
+                width: 100%;
+                background: none;
+                border-width: 0 0 1px;
+                margin: 10px 0px;
+            }
 
-        input {
-            width: calc(100% - 40px);
-            background: none;
-            border-width: 0 0 1px;
-            margin: 10px 20px;
-        }
-
-        .free {
-            background-color: #0061FF;
-            padding: 10px;
-            margin: 10px;
-            font-size: 20px;
-            display: flex;
-            justify-content: center;
-            border-radius: 25px;
-            color: #fff;
-            text-decoration: none;
+            .free {
+                background-color: #0061FF;
+                padding: 10px;
+                margin: 10px 0;
+                font-size: 20px;
+                display: flex;
+                justify-content: center;
+                border-radius: 25px;
+                color: #fff;
+                text-decoration: none;
+            }
         }
     }
 }
@@ -184,7 +196,7 @@ a {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    font-size: 17px;
+    font-size: 18px;
     margin: 150px 0px 50px;
     line-height: 1.5;
 
@@ -215,8 +227,9 @@ a {
     }
 
     .txt-part {
-        width: calc(100% - 40px);
-        padding: 0 20px;
+        width: 100%;
+        margin: 0;
+        padding: 0 25px;
 
         h2 {
             color: black;
@@ -229,6 +242,7 @@ a {
 
         p {
             color: rgba(0, 0, 0, .8);
+            width: 100%;
             font-size: 18px;
             line-height: 1.6;
             margin-bottom: 25px;
@@ -336,6 +350,7 @@ a {
     }
 }
 
+
 .brand-title {
     width: 100%;
     // margin: auto;
@@ -366,54 +381,55 @@ a {
 
 
     .pic-part {
-        width: calc(100% - 40px);
-        padding: 0 10px;
-
-        img {
-            width: 100%;
-        }
+        width: 100%;
+        padding-right: 10px;
     }
 
-    .txt-part {
-        width: calc(100% - 40px);
-        padding: 0 10px;
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-
-        a {
-            color: #0061FF;
-            margin: 0px 0px 10px;
-            font-size: 18px;
-
-            &::after {
-                content: '➔';
-                font-size: 20px;
-                margin-left: 10px;
-            }
-        }
-
-        p {
-            width: 95%;
-            color: rgba(0, 0, 0, .8);
-            font-size: 17px;
-            line-height: 1.7;
-            display: flex;
-            flex-grow: 1;
-        }
-
-        span {
-            width: 95%;
-            color: rgba(0, 0, 0, .8);
-            font-size: 17px;
-            line-height: 1.7;
-            margin-top: 5%;
-            margin-left: 0;
-        }
+    img {
+        width: 100%;
     }
-
 }
+
+.txt-part {
+    width: calc(100% - 40px);
+    padding: 0 10px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    a {
+        color: #0061FF;
+        margin: 0px 0px 10px;
+        font-size: 18px;
+
+        &::after {
+            content: '➔';
+            font-size: 20px;
+            margin-left: 10px;
+        }
+    }
+
+    p {
+        width: 95%;
+        color: rgba(0, 0, 0, .8);
+        font-size: 17px;
+        line-height: 1.7;
+        display: flex;
+        flex-grow: 1;
+    }
+
+    span {
+        width: 95%;
+        color: rgba(0, 0, 0, .8);
+        font-size: 17px;
+        line-height: 1.7;
+        margin-top: 5%;
+        margin-left: 0;
+    }
+}
+
+
 
 .pic-group {
     display: none;
@@ -541,7 +557,7 @@ a {
             width: 100%;
             display: flex;
             justify-content: center;
-            margin: 60px 0 20px;
+            margin: 60px 0 0px;
         }
 
         a {
@@ -573,11 +589,11 @@ a {
             .icon-group {
                 display: flex;
                 justify-content: center;
-                margin: 20px 0;
+                margin: 0px 0 10px;
 
                 div {
                     background-color: #172B4D;
-                    margin: 0 8px;
+                    margin: 0 12px;
                     width: 35px;
                     height: 35px;
                     border-radius: 50%;
@@ -586,14 +602,15 @@ a {
 
                     i {
                         position: relative;
-                        left: 10px;
+                        font-size: 20px;
+                        left: 8px;
                     }
                 }
             }
 
             .items {
                 display: flex;
-                flex-wrap: wraph20;
+                flex-wrap: wrap;
                 flex-direction: column;
                 align-items: center;
             }
@@ -605,6 +622,7 @@ a {
             font-size: 15px;
             margin-top: 20px;
             margin-bottom: 80px;
+            line-height: 1.5;
         }
 
         .language {
@@ -621,6 +639,7 @@ a {
 
             i {
                 margin-right: 10px;
+
             }
         }
     }

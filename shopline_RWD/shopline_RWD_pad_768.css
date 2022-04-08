@@ -3,15 +3,9 @@
     margin-bottom: 250px;
   }
   .banner {
-    background-color: #00142D;
-    margin: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -19,14 +13,19 @@
         -ms-flex-align: center;
             align-items: center;
     margin-top: 0px;
+    top: 60px;
   }
-  .banner .pic-part {
-    padding-bottom: 50px;
+  .banner .row {
+    padding-top: 0px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
   }
-  .banner .pic-part img {
+  .banner .row .pic-part img {
     width: 100%;
   }
-  .banner .txt-part {
+  .banner .row .txt-part {
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -35,35 +34,37 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
     text-align: left;
     margin-top: 50px;
-    padding-left: 50px;
   }
-  .banner .txt-part h1 {
+  .banner .row .txt-part h1 {
     color: white;
     font-size: 40px;
     font-weight: bold;
     padding-left: 20px;
   }
-  .banner .txt-part .color {
+  .banner .row .txt-part .color {
     color: #00C66A;
   }
-  .banner .txt-part p {
+  .banner .row .txt-part p {
     color: white;
     font-size: 20px;
-    margin: 40px 0px;
+    padding: 40px 20px;
+    margin-bottom: 0;
   }
-  .banner .txt-part input {
+  .banner .row .txt-part input {
     width: 300px;
     display: inline-block;
+    margin: 0;
+    margin-left: 20px;
   }
-  .banner .txt-part .free {
-    width: 100px;
+  .banner .row .txt-part .free {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
     display: inline-block;
     text-align: center;
+    margin-left: 20px;
   }
   .txt-middle p {
     width: 590px;
@@ -125,13 +126,15 @@
     padding: 0 25px;
   }
   .global {
-    height: 350px;
+    height: 450px;
     background-image: url("https://img.shoplineapp.com/media/image_clips/609d0f5c33fdc6001aa95da6/original.png?1620905820");
     background-repeat: no-repeat;
     background-position: bottom -50px left 200px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    padding-top: 50px;
+    padding-left: 20px;
   }
   .global .box {
     width: 100%;
@@ -144,29 +147,49 @@
     position: relative;
     left: -200px;
   }
-  .information .wrap {
-    margin: 0;
-    position: relative;
-    left: 40px;
+  .information {
+    padding-left: 50px;
   }
   .information .covid {
-    position: relative;
-    left: -230px;
-    margin: 10px 0;
+    padding-bottom: 30px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-top: 100px;
   }
-  .last .wrap, .last p {
-    position: relative;
-    left: -180px;
+  .information .covid div {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-top: 0;
+  }
+  .information .last {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .information .last .wrap,
+  .information .last p {
     padding: 0;
+    margin: 0;
   }
-  .last .wrap .items, .last p .items {
+  .information .last .wrap .items,
+  .information .last p .items {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  .last .language {
-    display: none;
+  .information .last .wrap .items a,
+  .information .last p .items a {
+    margin-right: 40px;
+  }
+  .information .last p {
+    padding-left: 20px;
+    margin-bottom: 100px;
+  }
+  .information .last .language {
+    margin-left: -20px;
   }
 }
 /*# sourceMappingURL=shopline_RWD_pad_768.css.map */

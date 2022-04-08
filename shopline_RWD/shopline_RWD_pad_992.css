@@ -1,6 +1,56 @@
 @media screen and (min-width: 992px) {
+  body {
+    text-align: left;
+  }
+  .login {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .login .move {
+    width: 100%;
+    max-width: 1300px;
+  }
+  .login .move a {
+    padding: 0;
+  }
+  .main-header {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .main-header .logo {
+    padding-bottom: 20px;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    margin-left: 80px;
+    margin-right: 20px;
+  }
+  .main-header .main-nav {
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 0vh;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .main-header .main-nav .btn-phone {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .main-header .main-nav .btn-phone button {
+    padding: 10px;
+  }
   .banner {
-    margin: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -14,7 +64,9 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin-top: 40px;
+    padding: 0;
+    padding-bottom: 100px;
+    padding-top: 200px;
   }
   .banner .pic-part {
     width: 50%;
@@ -35,6 +87,8 @@
         -ms-flex-pack: center;
             justify-content: center;
     text-align: left;
+    padding: 0;
+    margin: 0;
   }
   .banner .txt-part h1 {
     color: white;
@@ -108,7 +162,7 @@
             flex-direction: column;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    height: 160px;
+    height: 180px;
   }
   .row .txt-part .list ul li {
     width: 40%;
@@ -118,6 +172,7 @@
   }
   .pic-group {
     width: 100%;
+    max-width: 1200px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -142,8 +197,12 @@
   .pic-group img {
     height: 80%;
   }
+  .six-box {
+    max-width: 1200px;
+  }
   .brand {
     width: 100%;
+    max-width: 1200px;
     height: 300px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -205,6 +264,90 @@
   .global a {
     width: 30%;
     left: -400px;
+  }
+  .information {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .information .wrap {
+    max-width: 1200px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 0;
+    width: 100%;
+    max-width: 1200px;
+    margin-right: 50px;
+  }
+  .information .wrap .list h3 {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    border: none;
+    padding: 0;
+    position: static;
+    margin-bottom: 30px;
+  }
+  .information .wrap .list label {
+    display: none;
+  }
+  .information .wrap .list ul {
+    display: block;
+  }
+  .information .wrap .list ul li {
+    margin: 0;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-bottom: 10px;
+  }
+  .information .wrap .list ul li a {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .information .covid {
+    margin-left: auto;
+    margin-right: 50px;
+  }
+  .information .last {
+    width: 100%;
+    max-width: 1200px;
+  }
+  .information .last .wrap {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding-top: 50px;
+  }
+  .information .last .wrap .items {
+    display: inline-block;
+  }
+  .information .last p {
+    margin-bottom: 50px;
+    margin-top: -50px;
+    margin-left: auto;
+  }
+  .information .language {
+    display: none;
   }
 }
 /*# sourceMappingURL=shopline_RWD_pad_992.css.map */

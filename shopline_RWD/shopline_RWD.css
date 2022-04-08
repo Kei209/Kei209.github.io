@@ -1,4 +1,9 @@
 @charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 .login {
   display: none;
 }
@@ -38,6 +43,7 @@ a {
 .main-nav {
   position: absolute;
   width: 100%;
+  height: 100vh;
   left: 0;
   top: 100%;
   display: none;
@@ -146,49 +152,56 @@ a {
   padding: 20px 0;
 }
 
-.banner .pic-part {
+.banner .row {
+  padding-bottom: 0;
+  border: none;
+}
+
+.banner .row .pic-part {
   padding: 40px 20px 20px;
 }
 
-.banner .pic-part img {
+.banner .row .pic-part img {
   width: 100%;
 }
 
-.banner .txt-part {
+.banner .row .txt-part {
   text-align: center;
+  width: 100%;
 }
 
-.banner .txt-part h1 {
+.banner .row .txt-part h1 {
   color: white;
   font-size: 26px;
   font-weight: bold;
   line-height: 1.5;
 }
 
-.banner .txt-part .color {
+.banner .row .txt-part .color {
   color: #00C66A;
 }
 
-.banner .txt-part p {
+.banner .row .txt-part p {
+  width: 100%;
   color: white;
   font-size: 17px;
   font-weight: bold;
-  padding: 10px 20px;
   text-align: left;
   line-height: 1.5;
+  text-align: justify;
 }
 
-.banner .txt-part input {
-  width: calc(100% - 40px);
+.banner .row .txt-part input {
+  width: 100%;
   background: none;
   border-width: 0 0 1px;
-  margin: 10px 20px;
+  margin: 10px 0px;
 }
 
-.banner .txt-part .free {
+.banner .row .txt-part .free {
   background-color: #0061FF;
   padding: 10px;
-  margin: 10px;
+  margin: 10px 0;
   font-size: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -213,7 +226,7 @@ a {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  font-size: 17px;
+  font-size: 18px;
   margin: 150px 0px 50px;
   line-height: 1.5;
 }
@@ -245,8 +258,9 @@ a {
 }
 
 .row .txt-part {
-  width: calc(100% - 40px);
-  padding: 0 20px;
+  width: 100%;
+  margin: 0;
+  padding: 0 25px;
 }
 
 .row .txt-part h2 {
@@ -260,6 +274,7 @@ a {
 
 .row .txt-part p {
   color: rgba(0, 0, 0, 0.8);
+  width: 100%;
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 25px;
@@ -438,15 +453,15 @@ a {
 }
 
 .brand .pic-part {
-  width: calc(100% - 40px);
-  padding: 0 10px;
+  width: 100%;
+  padding-right: 10px;
 }
 
-.brand .pic-part img {
+.brand img {
   width: 100%;
 }
 
-.brand .txt-part {
+.txt-part {
   width: calc(100% - 40px);
   padding: 0 10px;
   margin-top: 20px;
@@ -462,19 +477,19 @@ a {
           justify-content: flex-start;
 }
 
-.brand .txt-part a {
+.txt-part a {
   color: #0061FF;
   margin: 0px 0px 10px;
   font-size: 18px;
 }
 
-.brand .txt-part a::after {
+.txt-part a::after {
   content: '➔';
   font-size: 20px;
   margin-left: 10px;
 }
 
-.brand .txt-part p {
+.txt-part p {
   width: 95%;
   color: rgba(0, 0, 0, 0.8);
   font-size: 17px;
@@ -487,7 +502,7 @@ a {
           flex-grow: 1;
 }
 
-.brand .txt-part span {
+.txt-part span {
   width: 95%;
   color: rgba(0, 0, 0, 0.8);
   font-size: 17px;
@@ -642,7 +657,7 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 60px 0 20px;
+  margin: 60px 0 0px;
 }
 
 .information .covid a {
@@ -693,12 +708,12 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 20px 0;
+  margin: 0px 0 10px;
 }
 
 .information .last .wrap .icon-group div {
   background-color: #172B4D;
-  margin: 0 8px;
+  margin: 0 12px;
   width: 35px;
   height: 35px;
   border-radius: 50%;
@@ -712,15 +727,16 @@ a {
 
 .information .last .wrap .icon-group div i {
   position: relative;
-  left: 10px;
+  font-size: 20px;
+  left: 8px;
 }
 
 .information .last .wrap .items {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wraph20;
-      flex-wrap: wraph20;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -735,6 +751,7 @@ a {
   font-size: 15px;
   margin-top: 20px;
   margin-bottom: 80px;
+  line-height: 1.5;
 }
 
 .information .last .language {

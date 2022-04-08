@@ -4,60 +4,65 @@
     }
 
     .banner {
-        background-color: #00142D;
-        margin: auto;
         display: flex;
-        flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
         margin-top: 0px;
+        top: 60px;
+        
+        .row {
+            
+            padding-top: 0px;
+            flex-direction: column-reverse;
+            .pic-part {
 
-        .pic-part {
-            img {
+                img {
+                    width: 100%;
+                }
+
+            }
+
+            .txt-part {
                 width: 100%;
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+                margin-top: 50px;
+
+                h1 {
+                    color: white;
+                    font-size: 40px;
+                    font-weight: bold;
+                    padding-left: 20px;
+                }
+
+                .color {
+                    color: #00C66A;
+                }
+
+                p {
+                    color: white;
+                    font-size: 20px;
+                    padding: 40px 20px;
+                    margin-bottom: 0;
+                }
+
+                input {
+                    width: 300px;
+                    display: inline-block;
+                    margin: 0;
+                    margin-left: 20px;
+                }
+
+                .free {
+                    width: fit-content;
+                    display: inline-block;
+                    text-align: center;
+                    margin-left: 20px;
+                }
             }
 
-            padding-bottom: 50px;
         }
-
-        .txt-part {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: left;
-            margin-top: 50px;
-            padding-left: 50px;
-
-            h1 {
-                color: white;
-                font-size: 40px;
-                font-weight: bold;
-                padding-left: 20px;
-            }
-
-            .color {
-                color: #00C66A;
-            }
-
-            p {
-                color: white;
-                font-size: 20px;
-                margin: 40px 0px;
-            }
-
-            input {
-                width: 300px;
-                display: inline-block;
-            }
-
-            .free {
-                width: 100px;
-                display: inline-block;
-                text-align: center;
-            }
-        }
-
     }
 
     .txt-middle {
@@ -128,11 +133,13 @@
     }
 
     .global {
-        height: 350px;
+        height: 450px;
         background-image: url("https://img.shoplineapp.com/media/image_clips/609d0f5c33fdc6001aa95da6/original.png?1620905820");
         background-repeat: no-repeat;
         background-position: bottom -50px left 200px;
         display: flex;
+        padding-top: 50px;
+        padding-left: 20px;
 
         .box {
             width: 100%;
@@ -150,36 +157,61 @@
     }
 
     .information {
-        .wrap {
-            margin: 0;
-            position: relative;
-            left: 40px;
-        }
+        padding-left: 50px;
 
         .covid {
-            position: relative;
-            left: -230px;
-            margin: 10px 0;
-        }
+            padding-bottom: 30px;
+            width: fit-content;
+            margin-top: 100px;
 
-
-    }
-
-    .last {
-
-        .wrap ,p{
-            position: relative;
-            left: -180px;
-            padding: 0;
-
-            .items {
-                flex-direction: row;
+            div {
+                justify-content: flex-start;
+                margin-top: 0;
             }
         }
 
-        .language {
-            display: none;
+        .last {
+            align-items: flex-start;
+
+            .wrap,
+            p {
+                padding: 0;
+                margin: 0;
+
+                .items {
+                    flex-direction: row;
+
+                    // &::after {
+                    //     content: '|';
+                    //     color: #fff;
+                    //     position: absolute;
+                    //     left: 30%;
+                    // }
+
+                    // &::before {
+                    //     content: '|';
+                    //     color: #fff;
+                    //     position: absolute;
+                    //     left: 60%;
+                    // }
+
+                    a {
+                        margin-right: 40px;
+                    }
+                }
+            }
+
+            p {
+                padding-left: 20px;
+                margin-bottom: 100px;
+            }
+
+            .language {
+                margin-left: -20px;
+            }
+
         }
 
     }
+
 }
