@@ -49,6 +49,10 @@
             container.innerHTML = pokemonImg;
         }
 
+        // let btnAll = document.getElementById("loadall");
+        // btnAll.onclick = function (event){}
+        // btnAll.addEventListener("click" ,function(){});
+
         let i = 0;
         function allPokemon() {
             for (let i = 1; i < 898; i++) {
@@ -71,6 +75,11 @@
         //Click +1
         let j = 0;
         let time = 0;
+        
+        // let btnAdd = document.getElementById("addone");
+        // btnAdd.onclick = function (event){}
+        // btnAdd.addEventListener("click" ,function(){});
+
         function AddPokemon() {
             i++;
             if (i >= 1) {
@@ -87,12 +96,20 @@
                 btnRemove.addEventListener("click", function (event) {
                     i = j - time;
                 });
+                // btnRemove.onclick = function (event) {
+                //     i = j - time;
+                // };
             }
             let btnReset = document.getElementById("reset");
             btnReset.addEventListener("click", function (event) {
                 i = 0;
             });
         }
+
+        // let btnRemove = document.getElementById("removeone");
+        // btnRemove.onclick = function (event){}
+        // btnRemove.addEventListener("click" ,function(){});
+
 
         function removePokemon() {
             container.removeChild(container.lastChild);
@@ -102,6 +119,10 @@
                 time = 0;
             });
         }
+
+        // let btnReset = document.getElementById("reset");
+        // btnReset.onclick = function (event){}
+        // btnReset.addEventListener("click" ,function(){});
 
         function resetPokemon() {
             container.innerHTML = "";
