@@ -15,7 +15,7 @@
 
 <body>
     <div class="container w-50 mx-auto mt-5">
-        <input type="text" class="w-100" id="input-box">
+        <input type="text" class="w-100 " id="input-box">
         <div class="num-box p-3">
             <div class="row">
                 <button id="btn-clear" class="col-6 mb-2 btn btn-danger">C</button>
@@ -60,68 +60,30 @@
         crossorigin="anonymous"></script>
 
     <script>
+
+        let btns = document.querySelectorAll('.btn-num')
+        let btn_plus = document.getElementById('btn-plus')
+        let btn_minus = document.getElementById('btn-minus')
+        let btn_multiply = document.getElementById('btn-multiply')
+        let btn_divided = document.getElementById('btn-divided')
+        let btn_ans = document.getElementById('btn-ans')
+        let btn_dot = document.getElementById('btn-dot')
+        let text_box = document.getElementById('input-box')
+        let btn_clear = document.getElementById('btn-clear')
+        let btn_back = document.getElementById('btn-back')
+
         window.onload = function () {
-            // let btn_num1 = document.getElementById('btn-num1')
-            // let btn_num2 = document.getElementById('btn-num2')
-            // let btn_num3 = document.getElementById('btn-num3')
-            // let btn_num4 = document.getElementById('btn-num4')
-            // let btn_num5 = document.getElementById('btn-num5')
-            // let btn_num6 = document.getElementById('btn-num6')
-            // let btn_num7 = document.getElementById('btn-num7')
-            // let btn_num8 = document.getElementById('btn-num8')
-            // let btn_num9 = document.getElementById('btn-num9')
-            // let btn_num0 = document.getElementById('btn-num0')
-            let btns = document.querySelectorAll('.btn-num')
-            let btn_plus = document.getElementById('btn-plus')
-            let btn_minus = document.getElementById('btn-minus')
-            let btn_multiply = document.getElementById('btn-multiply')
-            let btn_divided = document.getElementById('btn-divided')
-            let btn_ans = document.getElementById('btn-ans')
-            let btn_dot = document.getElementById('btn-dot')
-            let text_box = document.getElementById('input-box')
-            let btn_clear = document.getElementById('btn-clear')
-            let btn_back = document.getElementById('btn-back')
 
             btn_clear.onclick = function () {
-                location.reload()
+                text_box.value = ""
             }
 
-            btns.forEach(item=>{
-                item.addEventListener('click',function(){
+            btns.forEach(item => {
+                item.addEventListener('click', function () {
                     text_box.value += item.innerText
                 });
             });
 
-            // btn_num1.addEventListener("click", function () {
-            //     text_box.value += btn_num1.innerText
-            // });
-            // btn_num2.addEventListener("click", function () {
-            //     text_box.value += btn_num2.innerText
-            // });
-            // btn_num3.addEventListener("click", function () {
-            //     text_box.value += btn_num3.innerText
-            // });
-            // btn_num4.addEventListener("click", function () {
-            //     text_box.value += btn_num4.innerText
-            // });
-            // btn_num5.addEventListener("click", function () {
-            //     text_box.value += btn_num5.innerText
-            // });
-            // btn_num6.addEventListener("click", function () {
-            //     text_box.value += btn_num6.innerText
-            // });
-            // btn_num7.addEventListener("click", function () {
-            //     text_box.value += btn_num7.innerText
-            // });
-            // btn_num8.addEventListener("click", function () {
-            //     text_box.value += btn_num8.innerText
-            // });
-            // btn_num9.addEventListener("click", function () {
-            //     text_box.value += btn_num9.innerText
-            // });
-            // btn_num0.addEventListener("click", function () {
-            //     text_box.value += btn_num0.innerText
-            // });
             let str
             btn_plus.onclick = function () {
                 text_box.value += btn_plus.innerText
@@ -155,13 +117,15 @@
             btn_dot.onclick = function () {
                 if (text_box.value.length == 0) {
                     text_box.value += 0
+                    text_box.value += btn_dot.innerText
                 }
-                text_box.value += btn_dot.innerText
-                btn_dot.setAttribute('disabled', true)
+                else if (text_box.value.length > 0 && !text_box.value.includes('.')) {
+                    text_box.value += btn_dot.innerText
+                }
             }
+
             btn_back.onclick = function () {
                 text_box.value = text_box.value.substring(0, text_box.value.length - 1)
-                btn_dot.removeAttribute('disabled')
             }
         }
     </script>
