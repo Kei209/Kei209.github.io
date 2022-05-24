@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="bs.css">
+    <script src="https://kit.fontawesome.com/2e1e60a806.js" crossorigin="anonymous"></script>
+
+    <title>Hello, world!</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .nav-item:hover {
+            background-color: #fff;
+        }
+
+        .nav-link:hover {
+            --bs-white-rgb: var(--bs-dark);
+
+        }
+
+        .choosed {
+            background-color: #cfc;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <!-- <div class="container-fluid"> -->
+        <!-- <ul class="nav justify-content-center bg-dark">
+                <li class="nav-item">
+                    <a id="iPadPro" class="nav-link active text-white" aria-current="page" href="#">iPadPro</a>
+                </li>
+                <li class="nav-item">
+                    <a id="iPadAir" class="nav-link text-white" href="#">iPadAir</a>
+                </li>
+                <li class="nav-item">
+                    <a id="iPad" class="nav-link text-white" href="#">iPad</a>
+                </li>
+            </ul> -->
+        <div class="container mt-2">
+            <div class="d-flex justify-content-between">
+                <h2></h2>
+                <p>金額 : $ <span id="total"></span>元</p>
+            </div>
+            <div class="row">
+                <div class="main-pic col-12 col-md-6">
+                    <img src="" alt="{圖檔路徑}" class="w-75">
+                </div>
+                <ul class="main-specs col-12 col-md-6">
+                    <!-- {規格} -->
+                </ul>
+            </div>
+        </div>
+        <!-- </div> -->
+    </main>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+<script>
+    //取到 靜態UI
+    let nav_iPadPro = document.getElementById('iPadPro')
+    let nav_iPadAir = document.getElementById('iPadAir')
+    let nav_iPad = document.getElementById('iPad')
+
+    let span_price = document.querySelector('#total')
+    let h2_name = document.querySelector('main h2')
+    let img_ = document.querySelector('.main-pic img')
+    //規格 : specia
+    let ul_specs = document.querySelector('.main-specs')
+
+
+    let appleArray;
+    const appleJSONurl = 'https://raw.githubusercontent.com/Kei209/FileStorage/main/apple.json'
+    let xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            appleArray = JSON.parse(this.responseText);
+            afterResponse();
+        }
+        else {
+            console.log('抓資料失敗')
+        }
+    }
+    xhr.open('GET', appleJSONurl);
+    xhr.send();
+
+    let specArray_ipadpro = [
+        { title: '機型', key: 'monitor', options: [], choosed: null },
+        { title: '顏色', key: 'color', options: [], choosed: null },
+        { title: '記憶體', key: 'storage', options: [], choosed: null },
+        { title: '網路', key: 'network', options: [], choosed: null },
+    ]
+    // let specArray_ipadair = [
+    //     { title: '顏色', key: 'color', options: [], choosed: null },
+    //     { title: '記憶體', key: 'storage', options: [], choosed: null },
+    //     { title: '網路', key: 'network', options: [], choosed: null },
+    // ]
+    // let specArray_ipad = [
+    //     { title: '顏色', key: 'color', options: [], choosed: null },
+    //     { title: '記憶體', key: 'storage', options: [], choosed: null },
+    //     { title: '網路', key: 'network', options: [], choosed: null },
+    // ]
+
+</script>
+
+<script>
+    let colorArray_ipadpro = [];
+    function afterResponse() {
+        Object.values(appleArray)[0].forEach(data => {
+            console.log(data.productPic)
+            // console.log(data)
+            specArray_ipadpro.forEach(spec => {
+                let value = data[spec.key]
+                if (!spec.options.includes(value)) {
+                    spec.options.push(value)
+                }
+            })
+            if (!colorArray_ipadpro.includes(data.productPic)) {
+                colorArray_ipadpro.push(`${data.productPic}`)
+            }
+            console.log(colorArray_ipadpro)
+        })
+
+        // Object.values(appleArray)[1].forEach(data => {
+        //     specArray_ipadair.forEach(spec => {
+        //         let value = data[spec.key]
+        //         if (!spec.options.includes(value)) {
+        //             spec.options.push(value)
+        //         }
+        //     })
+        // })
+        // // console.log(specArray_ipadair)
+
+        // Object.values(appleArray)[2].forEach(data => {
+        //     specArray_ipad.forEach(spec => {
+        //         let value = data[spec.key]
+        //         if (!spec.options.includes(value)) {
+        //             spec.options.push(value)
+        //         }
+        //     })
+        // })
+        // console.log(specArray_ipad)
+    }
+
+</script>
+
+<script>
+    // nav_iPadPro.addEventListener('click', () => {
+    window.onload = () => {
+
+        h2_name.innerHTML = "iPadPro";
+        img_.src = "./pics/ipad-pro-all.jpg"
+        ul_specs.innerHTML = "";
+        specArray_ipadpro.forEach(spec => {
+            let title = spec.title
+            let key = spec.key
+            let options = spec.options
+
+            let li = document.createElement('li')
+            ul_specs.appendChild(li)
+            li.classList.add(`${key}`)  //利用class 利於把UI分組
+
+            let h3 = document.createElement('h3')
+            li.appendChild(h3)
+            h3.innerText = title
+
+            console.log(spec)
+
+            // debugger;
+            options.forEach(option => {
+                let button = document.createElement('button')
+                li.appendChild(button)
+                button.setAttribute('class', 'btn btn-light me-3')
+                button.innerText = option
+
+                button.addEventListener('click', (e) => {
+                    spec.choosed = option
+                    let group = li.querySelectorAll(`button`)
+                    group.forEach(btn =>
+                        btn.classList.remove('choosed') //同組的移除
+                    )
+                    button.classList.add('choosed') //點到的加
+                    refreshImgAndPrice()
+                })
+            })
+            li.append(document.createElement('hr'))
+        })
+    }
+    // })
+</script>
+
+<script>
+    function refreshImgAndPrice() {
+        let tmp = Object.values(appleArray)[0]
+
+        specArray_ipadpro.forEach(spec => {
+            tmp = tmp.filter(data => data[spec.key] == spec.choosed)
+        })
+
+        if (tmp.length != 1) return
+
+        span_price.innerHTML = tmp[0].price
+
+    }
+</script>
+
+</html>

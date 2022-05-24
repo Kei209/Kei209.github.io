@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="bs.css">
+    <script src="https://kit.fontawesome.com/2e1e60a806.js" crossorigin="anonymous"></script>
+
+    <title>Hello, world!</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .nav-item:hover {
+            background-color: #fff;
+        }
+
+        .nav-link:hover {
+            --bs-white-rgb: var(--bs-dark);
+
+        }
+
+        hr {
+            border: 1px solid #fff;
+        }
+
+        .choosed {
+            background-color: #cfc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <ul class="nav justify-content-center bg-dark">
+            <li class="nav-item">
+                <a id="iPadPro" class="nav-link active text-white" aria-current="page" href="#">iPadPro</a>
+            </li>
+            <li class="nav-item">
+                <a id="iPadAir" class="nav-link text-white" href="#">iPadAir</a>
+            </li>
+            <li class="nav-item">
+                <a id="iPad" class="nav-link text-white" href="#">iPad</a>
+            </li>
+        </ul>
+        <div id="box" class="d-flex w-75 mx-auto flex-column flex-md-row row row-cols-md-2">
+            <div id="pic-box" class="d-flex justify-content-center col"></div>
+            <div id="btn-box" class="pt-5 d-flex flex-wrap col"></div>
+        </div>
+    </div>
+
+
+
+    <script>
+        let appleArray;
+        const appleJSONurl = 'https://raw.githubusercontent.com/Kei209/FileStorage/main/apple.json'
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                appleArray = JSON.parse(this.responseText);
+            }
+        }
+        xhr.open('GET', appleJSONurl);
+        xhr.send();
+    </script>
+
+    <script>
+        let iPadPro, iPadAir, iPad, iPadMini
+        let box, pic_box, btn_box
+        iPadPro = document.getElementById('iPadPro')
+        iPadAir = document.getElementById('iPadAir')
+        iPad = document.getElementById('iPad')
+        // iPadMini = document.getElementById('iPadMini')
+        box = document.getElementById('box')
+        pic_box = document.getElementById('pic-box')
+        btn_box = document.getElementById('btn-box')
+
+        window.onload = function () {
+            iPadAir.addEventListener('click', function () {
+                pic_box.innerText = ""
+                btn_box.innerText = ""
+                createSelect_color_ipadair();
+                createSelect_storage_ipadair();
+                createSelect_network_ipadair();
+            });
+            iPadPro.addEventListener('click', function () {
+                pic_box.innerText = ""
+                btn_box.innerText = ""
+                createSelect_monitor_ipadpro();
+                createSelect_color_ipadpro();
+                createSelect_storage_ipadpro();
+                createSelect_network_ipadpro();
+            })
+            iPad.addEventListener('click', function () {
+                pic_box.innerText = ""
+                btn_box.innerText = ""
+                createSelect_color_ipad();
+                createSelect_storage_ipad();
+                createSelect_network_ipad();
+            })
+        }
+    </script>
+
+    <script>
+        let color_content
+        function createSelect_color_ipadair() {
+            let img_all = document.createElement('img');
+            img_all.setAttribute('src', './pics/ipad-air-all.jpg');
+            img_all.setAttribute('class', 'w-75');
+            pic_box.appendChild(img_all);
+
+            let colorArray = ['./pics/gray.png', './pics/pink.jpg', './pics/purple.jpg', './pics/blue.jpg', './pics/startlight.jpg']
+            let color_part = document.createElement('div')
+
+            let select_color_box, select_color, color
+            for (let i = 0; i < 5; i++) {
+                // <input type="checkbox" id="menu_control">
+
+                select_color_box = document.createElement('button')
+                select_color = document.createElement('p')
+                color = document.createElement('img')
+                select_color.innerText = appleArray.iPadAir[i].color
+                color.setAttribute('class', 'rounded-circle mb-2')
+                color.setAttribute('src', `${colorArray[i]}`)
+                color.setAttribute('style', `width: 50px; height:50px;`)
+                select_color_box.setAttribute('class', 'd-flex flex-column col-3 align-items-center btn px-0 pt-3 pb-0 border-light border-2 mx-2 my-auto')
+                color_part.setAttribute('class', 'w-100 d-flex flex-wrap')
+                select_color_box.appendChild(color);
+                select_color_box.appendChild(select_color);
+                color_part.appendChild(select_color_box)
+                btn_box.appendChild(color_part);
+                select_color_box.addEventListener('click', function (event) {
+                    // select_color_box.classList.add('bg-warning')
+
+                    
+                    pic_box.innerText = ""
+                    let img = document.createElement('img');
+                    img.setAttribute('src', `${appleArray.iPadAir[i].productPic}`);
+                    img.setAttribute('class', 'w-75 p-5 my-auto');
+                    pic_box.appendChild(img);
+                    color_content = appleArray.iPadAir[i].color
+                    // console.log(color_content)
+                    producePrice_ipadair()
+                    let group = color_part.querySelectorAll(`button`)
+                    console.log(group);
+                    group.forEach(btn =>
+                        btn.classList.remove('choosed') //同組的移除
+                    )
+    
+                    select_color_box.classList.add('choosed') //點到的加
+                })
+            }
+            create_hr()
+        }
+    </script>
+
+    <script>
+        let select_storage_box, select_storage, storage_content
+        function createSelect_storage_ipadair() {
+            let storage_part = document.createElement('div')
+            for (let i = 0; i <= 1; i++) {
+                select_storage_box = document.createElement('button')
+                select_storage = document.createElement('p')
+                select_storage.innerText = appleArray.iPadAir[i].storage
+                select_storage_box.setAttribute('class', 'd-flex col-4 btn px-0 py-3 border-light border-2 mx-2 my-auto')
+                select_storage_box.appendChild(select_storage);
+                select_storage.setAttribute('class', 'm-auto')
+                storage_part.setAttribute('class', 'w-100 d-flex flex-wrap')
+                storage_part.appendChild(select_storage_box)
+                btn_box.appendChild(storage_part);
+                select_storage_box.addEventListener('click', function () {
+                    storage_content = appleArray.iPadAir[i].storage
+                    console.log(storage_content)
+                    producePrice_ipadair()
+                })
+            }
+            create_hr()
+        }
+    </script>
+
+    <script>
+        let select_network_box, select_network, network_content
+        function createSelect_network_ipadair() {
+            let network_part = document.createElement('div')
+            for (let i = 0; i <= 1; i++) {
+                select_network_box = document.createElement('button')
+                select_network = document.createElement('p')
+                select_network.innerText = appleArray.iPadAir[i].network
+                select_network_box.setAttribute('class', 'd-flex col-4 btn px-0 py-3 border-light border-2 mx-2 my-auto')
+                select_network_box.appendChild(select_network);
+                select_network.setAttribute('class', 'm-auto')
+                network_part.setAttribute('class', 'w-100 d-flex flex-wrap')
+                network_part.appendChild(select_network_box)
+                btn_box.appendChild(network_part);
+                select_network_box.addEventListener('click', function () {
+                    network_content = appleArray.iPadAir[i].network
+                    console.log(network_content)
+                    producePrice_ipadair()
+                })
+            }
+            create_hr()
+        }
+    </script>
+
+    <script>
+        let p, btns
+        p = document.createElement('p')
+        function producePrice_ipadair() {
+            let price_ipadair = appleArray.iPadAir.filter(air => air.storage == storage_content && air.network == network_content && air.color == color_content)
+            console.log(price_ipadair)
+            console.log(price_ipadair[0])
+            p.setAttribute('class', 'p-3 fs-2')
+            p.innerText = `${color_content} ${storage_content} ${network_content} \n NT$ ${price_ipadair[0].price}`
+            btn_box.appendChild(p)
+        }
+    </script>
+
+    <script>
+        let select_monitor_box, select_monitor, monitor_content_ipadpro
+        let monitorArray = ['./pics/ipad-pro-11-monitor.png', './pics/ipad-pro-12-monitor.png']
+        function createSelect_monitor_ipadpro() {
+            let monitor_part = document.createElement('div')
+            for (let i = 0; i <= 1; i++) {
+                select_monitor_box = document.createElement('button')
+                select_monitor = document.createElement('p')
+                select_monitor.innerText = appleArray.iPadPro[i].monitor
+                select_monitor_box.setAttribute('class', 'd-flex col-4 btn px-0 py-3 border-light border-2 mx-2 my-auto')
+                select_monitor_box.appendChild(select_monitor);
+                select_monitor.setAttribute('class', 'm-auto')
+                monitor_part.setAttribute('class', 'w-100 d-flex flex-wrap')
+                monitor_part.appendChild(select_monitor_box)
+                btn_box.appendChild(monitor_part);
+                select_monitor_box.addEventListener('click', function () {
+                    pic_box.innerText = ""
+                    let img = document.createElement('img');
+                    img.setAttribute('src', `${monitorArray[i]}`);
+                    img.setAttribute('class', 'w-100 p-5 my-auto');
+                    pic_box.appendChild(img);
+                    monitor_content_ipadpro = appleArray.iPadPro[i].monitor
+                    console.log(monitor_content_ipadpro)
+                    producePrice_ipadpro()
+                })
+            }
+            create_hr()
+        }
+    </script>
+
+    <script>
+        let color_content_ipadpro
+        function createSelect_color_ipadpro() {
+            let img_all = document.createElement('img');
+            img_all.setAttribute('src', './pics/ipad-pro-all.jpg');
+            img_all.setAttribute('class', 'w-75 h-75 my-auto');
+            pic_box.appendChild(img_all);
+
+            let colorArray = ['./pics/gray.png', './pics/silver.png']
+            let color_part = document.createElement('div')
+            for (let i = 0; i < 2; i++) {
+                select_color_box = document.createElement('button')
+                select_color = document.createElement('p')
+                color = document.createElement('img')
+                select_color.innerText = appleArray.iPadPro[i].color
+                color.setAttribute('class', 'rounded-circle mb-2')
+                color.setAttribute('src', `${colorArray[i]}`)
+                color.setAttribute('style', `width: 50px; height:50px;`)
+                select_color_box.setAttribute('class', 'd-flex flex-column col-3 align-items-center btn px-0 pt-3 pb-0 border-light border-2 mx-2 my-auto')
+                color_part.setAttribute('class', 'w-100 d-flex flex-wrap')
+                select_color_box.appendChild(color);
+                select_color_box.appendChild(select_color);
+                color_part.appendChild(select_color_box)
+                btn_box.appendChild(color_part);
+                select_color_box.addEventListener('click', function () {
+                    pic_box.innerText = ""
+                    let img = document.createElement('img');
+                    let monitor11Array = ['./pics/ipad-pro-11-gray.jpg', './pics/ipad-pro-11-silver.jpg']
+                    img.setAttribute('src', `${monitor11Array[i]}`);
+                    img.setAttribute('class', 'w-100 p-5 my-auto');
+                    pic_box.appendChild(img);
+
+                    color_content_ipadpro = appleArray.iPadPro[i].color
+                    console.log(color_content_ipadpro)
+                    producePrice_ipadpro()
+                })
+            }
+            create_hr()
+
+        }
+    </script>
+
+    <script>
+        let storage_content_ipadpro
+
+        function createSelect_storage_ipadpro() {
+            let storage_part = document.createElement('div')
+            for (let i = 0; i <= 4; i++) {
+                select_storage_box = document.createElement('button')
+                select_storage = document.createElement('p')
+                select_storage.innerText = appleArray.iPadPro[i].storage
+                select_storage_box.setAttribute('class', 'd-flex col-3 btn px-0 py-3 border-light border-2 mx-2 mb-2')
+                select_storage_box.appendChild(select_storage);
+                select_storage.setAttribute('class', 'm-auto')
+                storage_part.setAttribute('class', 'w-100 d-flex flex-wrap')
+                storage_part.appendChild(select_storage_box)
+                btn_box.appendChild(storage_part);
+                select_storage_box.addEventListener('click', function () {
+                    storage_content_ipadpro = appleArray.iPadPro[i].storage
+                    console.log(storage_content_ipadpro)
+                    producePrice_ipadpro()
+                })
+            }
+            create_hr()
+
+        }
+    </script>
+
+    <script>
+        let network_content_ipadpro
+        function createSelect_network_ipadpro() {
+            let network_part = document.createElement('div')
+            for (let i = 0; i <= 1; i++) {
+                select_network_box = document.createElement('button')
+                select_network = document.createElement('p')
+                select_network.innerText = appleArray.iPadPro[i].network
+                select_network_box.setAttribute('class', 'd-flex col-4 btn px-0 py-3 border-light border-2 mx-2 my-auto')
+                select_network_box.appendChild(select_network);
+                select_network.setAttribute('class', 'm-auto')
+                network_part.setAttribute('class', 'w-100 d-flex flex-wrap')
+                network_part.appendChild(select_network_box)
+                btn_box.appendChild(network_part);
+                select_network_box.addEventListener('click', function () {
+                    network_content_ipadpro = appleArray.iPadPro[i].network
+                    console.log(network_content_ipadpro)
+                    producePrice_ipadpro()
+                })
+            }
+            create_hr()
+        }
+    </script>
+
+    <script>
+        function producePrice_ipadpro() {
+            // price_ipadpro = [{}]
+            let price_part = document.createElement('div')
+            let price_ipadpro = appleArray.iPadPro.filter(pro => pro.storage == storage_content_ipadpro && pro.network == network_content_ipadpro && pro.color == color_content_ipadpro && pro.monitor == monitor_content_ipadpro)
+            console.log(price_ipadpro)
+            console.log(price_ipadpro[0])
+            p.setAttribute('class', 'p-3 fs-2')
+            p.innerText = `${monitor_content_ipadpro} ${color_content_ipadpro} ${storage_content_ipadpro} ${network_content_ipadpro} \n NT$ ${price_ipadpro[0].price}`
+            btn_box.appendChild(p)
+        }
+    </script>
+
+    <script>
+        function create_hr() {
+            let color_hr = document.createElement('hr')
+            color_hr.setAttribute('class', 'w-100 my-3')
+            btn_box.appendChild(color_hr)
+        }
+    </script>
+
+    <script>
+        let color_content_ipad
+        function createSelect_color_ipad() {
+            let img_all = document.createElement('img');
+            img_all.setAttribute('src', './pics/ipad-all.jpg');
+            img_all.setAttribute('class', 'w-75');
+            pic_box.appendChild(img_all);
+
+            let colorArray = ['./pics/gray.png', './pics/silver.png']
+            let color_part = document.createElement('div')
+            for (let i = 0; i < 2; i++) {
+                select_color_box = document.createElement('button')
+                select_color = document.createElement('p')
+                color = document.createElement('img')
+                select_color.innerText = appleArray.iPad[i].color
+                color.setAttribute('class', 'rounded-circle mb-2')
+                color.setAttribute('src', `${colorArray[i]}`)
+                color.setAttribute('style', `width: 50px; height:50px;`)
+                select_color_box.setAttribute('class', 'd-flex flex-column col-3 align-items-center btn px-0 pt-3 pb-0 border-light border-2 mx-2 my-auto')
+                color_part.setAttribute('class', 'w-100 d-flex flex-wrap')
+                select_color_box.appendChild(color);
+                select_color_box.appendChild(select_color);
+                color_part.appendChild(select_color_box)
+                btn_box.appendChild(color_part);
+                select_color_box.addEventListener('click', function () {
+                    pic_box.innerText = ""
+                    let img = document.createElement('img');
+                    img.setAttribute('src', `${appleArray.iPad[i].productPic}`);
+                    img.setAttribute('class', 'w-75 p-5 my-auto');
+                    pic_box.appendChild(img);
+                    color_content_ipad = appleArray.iPad[i].color
+                    console.log(color_content_ipad)
+                    producePrice_ipad()
+                })
+            }
+            create_hr()
+
+        }
+    </script>
+
+    <script>
+        let storage_content_ipad
+        function createSelect_storage_ipad() {
+            let storage_part = document.createElement('div')
+            for (let i = 0; i <= 1; i++) {
+                select_storage_box = document.createElement('button')
+                select_storage = document.createElement('p')
+                select_storage.innerText = appleArray.iPad[i].storage
+                select_storage_box.setAttribute('class', 'd-flex col-4 btn px-0 py-3 border-light border-2 my-auto')
+                select_storage_box.appendChild(select_storage);
+                select_storage.setAttribute('class', 'm-auto')
+                storage_part.setAttribute('class', 'w-100 d-flex flex-wrap')
+                storage_part.appendChild(select_storage_box)
+                btn_box.appendChild(storage_part);
+                select_storage_box.addEventListener('click', function () {
+                    storage_content_ipad = appleArray.iPad[i].storage
+                    console.log(storage_content_ipad)
+                    producePrice_ipad()
+                })
+            }
+            create_hr()
+        }
+    </script>
+
+    <script>
+        function createSelect_network_ipad() {
+            let network_part = document.createElement('div')
+            for (let i = 0; i <= 1; i++) {
+                select_network_box = document.createElement('button')
+                select_network = document.createElement('p')
+                select_network.innerText = appleArray.iPad[i].network
+                select_network_box.setAttribute('class', 'd-flex col-4 btn px-0 py-3 border-light border-2 mx-2 my-auto')
+                select_network_box.appendChild(select_network);
+                select_network.setAttribute('class', 'm-auto')
+                network_part.setAttribute('class', 'w-100 d-flex flex-wrap')
+                network_part.appendChild(select_network_box)
+                btn_box.appendChild(network_part);
+                select_network_box.addEventListener('click', function () {
+                    network_content_ipad = appleArray.iPad[i].network
+                    console.log(network_content_ipad)
+                    producePrice_ipad()
+                })
+            }
+            create_hr()
+        }
+    </script>
+
+    <script>
+        function producePrice_ipad() {
+            let price_ipad = appleArray.iPad.filter(air => air.storage == storage_content_ipad && air.network == network_content_ipad && air.color == color_content_ipad)
+            console.log(price_ipad)
+            console.log(price_ipad[0])
+            p.setAttribute('class', 'p-3 fs-2')
+            p.innerText = `${color_content_ipad} ${storage_content_ipad} ${network_content_ipad} \n NT$ ${price_ipad[0].price}`
+            btn_box.appendChild(p)
+        }
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
